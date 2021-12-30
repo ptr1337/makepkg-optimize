@@ -14,7 +14,7 @@ optdepends=("upx: Compress executables"
             "optipng: Optimize PNG files"
             "svgo: Optimize SVG files"
             "openmp: Parallelize loops"
-            "mold: a modern fast linker)
+            "mold: a modern fast linker")
 backup=(etc/makepkg-optimize.conf)
 _buildenv=({pgo,ZZ-lto,graphite,rice,mold}.sh.in)
 _executable=({upx,optipng,svgo}-exec.sh.in)
