@@ -16,9 +16,6 @@ buildenv_functions+=('buildenv_mold')
 buildenv_mold() {
   if check_buildoption "mold" "y"; then
     moldflags=" -fuse-ld=mold"
-
     CFLAGS+="$moldflags"
-    CXXFLAGS+="$moldflags"
-    LDFLAGS+="$moldflags"
   fi
 }

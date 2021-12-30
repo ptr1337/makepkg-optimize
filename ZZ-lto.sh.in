@@ -15,11 +15,11 @@ buildenv_functions+=('buildenv_lto')
 
 buildenv_lto() {
   if check_buildoption "lto" "y" || check_buildoption "lto-thin" "y" || \
-     check_buildoption "lto-clang" "y" || check_buildoption "lto-thin-clang" "y"; then
+    check_buildoption "lto-clang" "y" || check_buildoption "lto-thin-clang" "y"; then
     ltoflags=" -flto"
     check_buildoption "lto-thin-clang" "y" && ltoflags+="=thin"
     check_buildoption "lto-thin" "y" || check_buildoption "lto" "y" && \
-    [[ -f "$(gcc -print-search-dirs | grep install | awk '{print $2 "liblto_plugin.so"}')" ]] && \
+      [[ -f "$(gcc -print-search-dirs | grep install | awk '{print $2 "liblto_plugin.so"}')" ]] && \
       ltoflags+="=auto -fno-fat-lto-objects"
     check_buildoption "lto" "y" && ltoflags+=" -flto-partition=none"
 
