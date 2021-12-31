@@ -32,7 +32,7 @@ Alternatively, makepkg-optimize can be used to build optimized packages within a
 
 To use PGO, create a folder in the same place, inside and outside of the chroot, to store [https://gcc.gnu.org/onlinedocs/gcc/Gcov-Data-Files.html profiles]:
 
-# mkdir -m 777 {"$CHROOT"/{root,"$USER"},}/mnt/pgo
+ - mkdir -m 777 {"$CHROOT"/{root,"$USER"},}/mnt/pgo
 
 Then edit CHROOT/root/etc/makepkg-optimize.conf and set PROFDEST=/mnt/pgo.
 
@@ -40,8 +40,8 @@ Then edit CHROOT/root/etc/makepkg-optimize.conf and set PROFDEST=/mnt/pgo.
 
 After the first building phase, bind the PGO cache:
 
-# mount -o bind {,"CHROOT"/root}/mnt/pgo
+- mount -o bind {,"CHROOT"/root}/mnt/pgo
 
-# mount -o bind "$CHROOT"/{root,"$USER"}/mnt/pgo
+- mount -o bind "$CHROOT"/{root,"$USER"}/mnt/pgo
 
 Tip: Use fstab to bind these folders at boot.
