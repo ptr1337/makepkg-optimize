@@ -1,8 +1,6 @@
 # makepkg-optimize
 
-makepkg-optimize is a collection of supplemental [https://gitlab.archlinux.org/pacman/pacman/commit/295a3491adc4af5c8634ac82777212ed9c664457 tidy], [https://gitlab.archlinux.org/pacman/pacman/commit/508b4e3ec0cb3e365942f4dc0626edda4789932b buildenv], and [https://gitlab.archlinux.org/pacman/pacman/commit/0bb04fa16a82db133dd010478c1256bc8500c5e7 executable] scripts for [[pacman]] which provide macros for several kinds of optimization in the {{ic|build()}} and {{ic|package()}} stages.
-
-{{Note|As with any package in the [[Arch User Repository]], {{AUR|makepkg-optimize}} has no official support. You should read, and you may post [[User:Quequotion/Arch User Repository#Commenting on packages|comments]] on its AUR page.}}
+makepkg-optimizeAUR is a collection of supplemental tidy, buildenv, and executable scripts for pacman which provide macros for several kinds of optimization in the build() and package() stages.
 
 ## Installation
 
@@ -20,7 +18,7 @@ Some packages may fail to build with certain optimizations and over-optimization
 
 After selecting your preferred optimizations, pass the configuration file when building:
 
-\$ makepkg -c --config /etc/makepkg-optimize.conf
+- makepkg -c --config /etc/makepkg-optimize.conf
 
 ### Profile-guided optimization
 
@@ -36,13 +34,13 @@ To use PGO, create a folder in the same place, inside and outside of the chroot,
 
 # mkdir -m 777 {"$CHROOT"/{root,"$USER"},}/mnt/pgo
 
-Then edit \$CHROOT/root/etc/makepkg-optimize.conf and set PROFDEST=/mnt/pgo.
+Then edit CHROOT/root/etc/makepkg-optimize.conf and set PROFDEST=/mnt/pgo.
 
 ## Building with PGO
 
 After the first building phase, bind the PGO cache:
 
-# mount -o bind {,"\$CHROOT"/root}/mnt/pgo
+# mount -o bind {,"CHROOT"/root}/mnt/pgo
 
 # mount -o bind "$CHROOT"/{root,"$USER"}/mnt/pgo
 
