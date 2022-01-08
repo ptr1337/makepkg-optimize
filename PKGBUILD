@@ -3,7 +3,7 @@
 # Contributor: bartus ( aur\at\bartus.33mail.com )
 
 pkgname=makepkg-optimize-mold
-pkgver=20
+pkgver=21
 pkgrel=1
 pkgdesc='Supplemental build and packaging optimizations for makepkg'
 arch=('any')
@@ -28,7 +28,7 @@ sha1sums=('4c5f0be71638a6ec2f18c01675d99f19eb6dd45d'
           '33a314e0c1f965c265cced8548c7d2235052f79d'
           'd7a3801037333c582dba976db27cf8896bc1b401'
           '3a356f52131e39f59d360c54a572d678c7208b42'
-          '83fb4e2bc0a75e91d7db317d221f45a6dc525e8a'
+          '77b84f9ab5ecce37af2f4dce3b94bcfe54a87b00'
           'a893c32f2a3fff8b279025ec60f0c3d88143dc1e'
           '9270b5e33d4508a959688a10c20dec3732763937'
           '34a33b47a8b667f9dc810737c0f598660b962d4c'
