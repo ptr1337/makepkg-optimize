@@ -16,7 +16,7 @@ optdepends=("upx: Compress executables"
             "openmp: Parallelize loops"
             "mold: a modern fast linker")
 backup=(etc/makepkg-optimize.conf)
-_buildenv=({pgo,ZZ-lto,graphite,rice,mold}.sh.in)
+_buildenv=({pgo,graphite,rice,mold}.sh.in)
 _executable=({upx,optipng,svgo}-exec.sh.in)
 _tidy=({upx,optipng,svgo}.sh.in)
 _conf=({{c,cxx,make,ld,debug-make,cmake-}flags,{buildenv,destdirs,pkgopts{,-param}}_ext,compress-param_max}.conf)

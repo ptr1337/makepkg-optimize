@@ -13,7 +13,6 @@ pkgbase = makepkg-optimize-mold
 	optdepends = mold: a modern fast linker
 	backup = etc/makepkg-optimize.conf
 	source = pgo.sh.in
-	source = ZZ-lto.sh.in
 	source = graphite.sh.in
 	source = rice.sh.in
 	source = mold.sh.in
