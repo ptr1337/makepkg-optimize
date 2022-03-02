@@ -17,7 +17,7 @@ buildenv_mold() {
   if
   check_buildoption "mold" "y"; then
 	export CXXFLAGS="${CFLAGS} -fuse-ld=mold"	
-	export CXXFLAGS="${CXXFLAGS} -fuse-ld=mold"
+	export CFFLAGS="${CXXFLAGS} -fuse-ld=mold"
 	export LDFLAGS="${LDFLAGS} -fuse-ld=mold"
   fi
 }
