@@ -8,7 +8,7 @@ LIBRARY=${LIBRARY:-'/usr/share/makepkg'}
 source "$LIBRARY/util/message.sh"
 source "$LIBRARY/util/option.sh"
 
-executable_functions+=('executable_ccache')
+executable_functions+=('executable_buildcache')
 
 executable_buildcache() {
 	if check_buildoption "buildcache" "y"; then

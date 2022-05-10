@@ -23,8 +23,8 @@ optdepends=("upx: Compress executables"
             "buildcache: a alternative to ccache")
 backup=(etc/makepkg-optimize.conf
         usr/share/makepkg/buildenv/compiler.sh)
-_buildenv=({pgo,graphite,rice,mold,bolt,buildcache,lld,aocc}.sh.in)
-_executable=({upx,optipng,svgo,compiler}-exec.sh.in)
+_buildenv=({pgo,graphite,rice,mold,bolt,buildcache,lld,aocc,compiler}.sh.in)
+_executable=({upx,optipng,svgo}-exec.sh.in)
 _tidy=({upx,optipng,svgo}.sh.in)
 _conf=({{c,cxx,make,ld,debug-make,cmake-}flags,{buildenv,destdirs,pkgopts{,-param}}_ext,compress-param_max}.conf)
 source=(${_buildenv[@]}
@@ -36,13 +36,13 @@ sha1sums=('4c5f0be71638a6ec2f18c01675d99f19eb6dd45d'
           '14cb27e5e45dacf8e59cfb498235036716393014'
           '53d6d080e26bcb450a3e082cf039f891efa6a88c'
           '418991215fb59646d3d345a182b5bfc10e15a49a'
-          'd0fea58a238d73830b7dab7294e69f0dd0e67681'
+          '22aeaf0766c4de926633f93bfa9aa2ab64bc50f3'
           '7060ba26bf4be4cc25f0e138d3ca27530a8798a8'
-          '13abb8cc96130bae85361ac203ec38cbde6d0005'
+          '64ffc9141af0e2c44d327e019c8d4d4a09585259'
+          '9315e1c31a4bd454220e1037a62bca6321d47bb0'
           'a893c32f2a3fff8b279025ec60f0c3d88143dc1e'
           '9270b5e33d4508a959688a10c20dec3732763937'
           '34a33b47a8b667f9dc810737c0f598660b962d4c'
-          '9315e1c31a4bd454220e1037a62bca6321d47bb0'
           '4def44ef53ba3b579bed40af897d6f0c038ec78d'
           '0022423564ed30dfe91bb3faa7f0c03ddcf4f25f'
           'fbd6ee512b6486320d41a007b9670dcf5a3430b6'
