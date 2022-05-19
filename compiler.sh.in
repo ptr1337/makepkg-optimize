@@ -27,8 +27,8 @@ LIBRARY=${LIBRARY:-'/usr/share/makepkg'}
 
 source "$LIBRARY/util/option.sh"
 
-build_options+=('ccache' 'distcc')
-buildenv_functions+=('buildenv_ccache' 'buildenv_distcc')
+build_options+=('ccache' 'buildcache')
+buildenv_functions+=('buildenv_ccache' 'buildenv_distcc' 'buildenv_buildcache')
 
 using_ccache=0
 
