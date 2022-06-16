@@ -10,12 +10,15 @@ LIBRARY=${LIBRARY:-'/usr/share/makepkg'}
 
 source "$LIBRARY/util/option.sh"
 
-build_options+=('relocs')
+build_options+=('relocs' 'relocs-gcc')
 buildenv_functions+=('buildenv_relocs')
 
 buildenv_relocs() {
-  if
-  check_buildoption "relocs" "y"; then
-	export LDFLAGS+="--emit-relocs"
+  if check_buildoption "relocs" "y" || check_buildoption "relocs-gcc" "y"; then
+	CFLAGS+=" -fno-reorder-blocks-and-partition"
+	CXXFLAGS+=" -fno-reorder-blocks-and-partition"
+	LDFLAGS+=" -Wl,--emit-relocs"
+	check_buildoption "relocs" "y" && \
+	LDFLAGS+=" -Wl,--emit-relocs"
   fi
 }
