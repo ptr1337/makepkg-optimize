@@ -4,7 +4,7 @@
 
 pkgname=makepkg-optimize-mold
 pkgver=30
-pkgrel=1
+pkgrel=2
 pkgdesc='Supplemental build and packaging optimizations for makepkg'
 arch=('any')
 license=('GPL')
@@ -28,7 +28,8 @@ _conf=({{c,cxx,make,ld,cmake-}flags,{buildenv,destdirs,pkgopts{,-param}}_ext,com
 source=(${_buildenv[@]}
     ${_executable[@]}
     ${_tidy[@]}
-${_conf[@]})
+    ${_conf[@]}
+    buildenv_optimize.sh)
 sha1sums=('1acc26a5a5737804f5aa6cca9d4bbce733e0f429'
           '7556b8a8faff5b943efa5058ce9d8e325c4d35a6'
           'd4e8f5ec1c30ebd69cce5121ea7823e1b42c3d27'
@@ -54,7 +55,8 @@ sha1sums=('1acc26a5a5737804f5aa6cca9d4bbce733e0f429'
           'efb3ed7d7d5516259709149d7bcd6ec208c07593'
           '1fc8035e64b739e20c70fbb4eaa5cb7aa1c63c90'
           '5d0cde13b50641371e4ec4d813d6b2dfae493889'
-          '8f54d9798899123aa28085ce74ae9dd34b84c075')
+          '8f54d9798899123aa28085ce74ae9dd34b84c075'
+          'eb778aa2503906e79e35df2800ca5d933fe990a9')
 
 prepare() {
     # Use the current makepkg config as a base
@@ -108,6 +110,9 @@ package() {
 
     # Supplemental Tidy scripts
     install -m644 -D -t ${pkgdir}/usr/share/makepkg/tidy/ ${_tidy[@]%.in}
+
+    # Override lint_config to allow makepkg-optimize BUILDENV/OPTIONS entries
+    install -m644 -D -t ${pkgdir}/usr/share/makepkg/lint_config/ buildenv_optimize.sh
 
     # Separate config file
     install -m644 -D -t ${pkgdir}/etc/ makepkg-optimize.conf
